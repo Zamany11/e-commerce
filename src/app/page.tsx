@@ -1,9 +1,12 @@
-import SearchSection from "@/components/ui/SearchSection";
+import HeroSection from "@/components/HeroSection";
+import Search from "@/components/Search";
+import { TypewriterText } from "@/components/TypewriterText";
 
 export default function Home() {
   return (
     <div>
-      <SearchSection />
+      <TypewriterText />
+      <HeroSection />
     </div>
   );
 }
