@@ -1,9 +1,9 @@
-import TestForm from "@/components/TestForm";
+import SearchSection from "@/components/ui/SearchSection";
 
 export default function Home() {
   return (
     <div>
-      <TestForm />
+      <SearchSection />
     </div>
   );
 }
