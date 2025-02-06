@@ -24,7 +24,7 @@ const Search = () => {
         <button
           type="submit"
           title="Search"
-          className="absolute inset-y-0 right-0 px-4 text-sm font-medium text-white bg-yellow-500 rounded-r-2xl hover:bg-yellow-600 "
+          className="absolute inset-y-0 right-0 px-4 text-sm font-medium text-white bg-orange-500 rounded-r-2xl hover:bg-orange-600 "
         >
           <IconSearch className="w-5 h-5 text-gray-200 group-focus-within:text-gray-200 transition-colors" />
         </button>

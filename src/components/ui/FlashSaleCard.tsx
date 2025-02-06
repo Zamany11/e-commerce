@@ -14,16 +14,19 @@ interface Product {
 interface FlashSaleCardProps {
   products: Product[];
   endTime: Date;
+  title?: string;
 }
 
-const FlashSaleCard = ({ products, endTime }: FlashSaleCardProps) => {
+const FlashSaleCard = ({ products, endTime, title = "Flash Sale" }: FlashSaleCardProps) => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
     seconds: 0
   });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       const now = new Date();
       const difference = endTime.getTime() - now.getTime();
@@ -43,6 +46,10 @@ const FlashSaleCard = ({ products, endTime }: FlashSaleCardProps) => {
     return () => clearInterval(timer);
   }, [endTime]);
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <section className='bg-slate-100'>
     <div className="flex flex-col md:container md:mx-auto">
@@ -52,7 +59,7 @@ const FlashSaleCard = ({ products, endTime }: FlashSaleCardProps) => {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
-          <span className="font-bold">Flash Sale</span>
+          <span className="font-bold">{title}</span>
         </div>
         <div className="flex items-center gap-2">
           <span>Time Left:</span>

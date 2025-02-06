@@ -29,7 +29,7 @@ export default function CategoryBar() {
     };
 
     return (
-        <section className="  bg-red-500">
+        <section className="  bg-red-600">
             <div className="container mx-auto">
                 {/* Desktop View - hidden on mobile */}
                 <ul className="hidden md:flex items-center justify-between p-5">

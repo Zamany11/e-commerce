@@ -1,11 +1,25 @@
+"use client"
+import { useEffect, useState } from "react";
+import AdvertCard from "./AdvertCard";
 import FlashSaleCard from "./ui/FlashSaleCard";
 
 const FeaturedProductList = () => {
-  // Set common end time for all products
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const endTime = new Date();
   endTime.setHours(endTime.getHours() + 7);
   endTime.setMinutes(endTime.getMinutes() + 19);
   endTime.setSeconds(endTime.getSeconds() + 25);
+
+  // Your products array remains the same
+
+  if (!mounted) {
+    return null;
+  }
 
   // Array of products
   const products = [
@@ -68,10 +82,22 @@ const FeaturedProductList = () => {
   ];
 
   return (
-    <div>
+    <div className="space-y-8">
       <FlashSaleCard
         endTime={endTime}
-        products={products}
+        products={products.slice(0, 4)}
+        title="Top Deals"
+      />
+      
+      <div className="my-8">
+       <AdvertCard /> 
+      </div>
+      
+
+      <FlashSaleCard
+        endTime={endTime}
+        products={products.slice(4)}
+        title="Flash Sales"
       />
     </div>
   );
