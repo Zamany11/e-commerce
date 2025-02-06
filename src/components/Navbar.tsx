@@ -1,10 +1,11 @@
 "use client";
-import { IconHome, IconUser, IconShoppingCart, IconSearch, IconMenu, IconX } from "@tabler/icons-react";
+import { IconHome, IconUser, IconShoppingCart, IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import Search from "./Search";
+import Link from "next/link";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   return (
@@ -75,30 +76,30 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
+        
           <div className="md:hidden bg-yellow-400 p-4">
             <ul className="space-y-4">
               <li>
-                <a href="/" className="flex items-center gap-x-2 text-lg">
+                <Link href="/" className="flex items-center gap-x-2 text-lg">
                   <IconHome size={24} />
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cart" className="flex items-center gap-x-2 text-lg">
+                <Link href="/cart" className="flex items-center gap-x-2 text-lg">
                   <IconShoppingCart size={24} />
                   Cart
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/signin" className="flex items-center gap-x-2 text-lg">
+                <Link href="/signin" className="flex items-center gap-x-2 text-lg">
                   <IconUser size={24} />
                   SignIn
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-        )}
+      
       </nav>
 
       {/* Mobile Search - Shows below navbar */}

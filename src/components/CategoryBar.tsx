@@ -82,7 +82,7 @@ export default function CategoryBar() {
                                                 className="absolute top-full left-0 mt-2 bg-red-500 w-full min-w-[200px] rounded-b-md shadow-lg z-10"
                                             >
                                                 <div className="grid grid-cols-2 gap-4 p-3">
-                                                    {smartphoneSubcategories.map((subcat, subIndex) => {
+                                                    {smartphoneSubcategories.map((subcat) => {
                                                         const originalIndex = categories.indexOf(subcat);
                                                         return (
                                                             <motion.div

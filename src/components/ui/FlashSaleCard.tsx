@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 interface Product {
@@ -74,7 +75,7 @@ const FlashSaleCard = ({ products, endTime }: FlashSaleCardProps) => {
 
             {/* Product Image */}
             <div className="aspect-square overflow-hidden mb-4">
-              <img 
+              <Image 
                 src={product.imageUrl} 
                 alt={product.title} 
                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
