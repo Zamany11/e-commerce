@@ -82,8 +82,8 @@ const HeroSection = () => {
                           <div>{slide.title}</div>
                           <div className="text-xl text-red-400">{slide.description}</div>
                         </h1>
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg">
-                          Start Buying
+                        <button className="bg-orange-500 hover:bg-orange-600 font-bold text-white px-8 py-3 rounded-lg">
+                          Shop Now
                         </button>
                       </div>
                     </div>

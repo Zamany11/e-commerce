@@ -24,12 +24,28 @@ const Navbar = () => {
 
             {/* Mobile Icons - Hidden on desktop */}
             <div className="md:hidden flex items-center space-x-4">
-              <button onClick={() => setIsSearchVisible(!isSearchVisible)} title="Toggle Search">
-                <IconSearch size={24} />
-              </button>
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <IconX size={24} /> : <IconMenu size={24} />}
-              </button>
+              <ul className="flex space-x-4"> {/* Added horizontal list for icons */}
+                <li>
+                  <button onClick={() => setIsSearchVisible(!isSearchVisible)} title="Search">
+                    <IconSearch size={24} />
+                  </button>
+                </li>
+                <li>
+                  <a href="/" className="hover:text-gray-600" title="Home">
+                    <IconHome size={24} />
+                  </a>
+                </li>
+                <li>
+                  <a href="/cart" className="hover:text-gray-600" title="Cart">
+                    <IconShoppingCart size={24} />
+                  </a>
+                </li>
+                <li>
+                  <a href="/signin" className="hover:text-gray-600" title="Sign In">
+                    <IconUser size={24} />
+                  </a>
+                </li>
+              </ul>
             </div>
 
             {/* Desktop Navigation - Hidden on mobile */}
@@ -60,7 +76,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-700 p-4">
+          <div className="md:hidden bg-yellow-400 p-4">
             <ul className="space-y-4">
               <li>
                 <a href="/" className="flex items-center gap-x-2 text-lg">
@@ -87,7 +103,7 @@ const Navbar = () => {
 
       {/* Mobile Search - Shows below navbar */}
       {isSearchVisible && (
-        <div className="md:hidden bg-gray-800 p-4">
+        <div className="md:hidden bg-white p-4">
           <Search />
         </div>
       )}
