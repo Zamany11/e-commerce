@@ -1,13 +1,13 @@
 import CategoryBar from "@/components/CategoryBar";
-import { FlipWordsComponent } from "@/components/FlipWords";
+import FeaturedProductList from "@/components/FeaturedProductList";
 import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <div>
-      <FlipWordsComponent />
+    <div>  
       <CategoryBar />
       <HeroSection />
+      <FeaturedProductList />
     </div>
   );
 }

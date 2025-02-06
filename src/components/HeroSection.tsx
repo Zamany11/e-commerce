@@ -63,14 +63,14 @@ const HeroSection = () => {
     }
   ];
   return (
-    <section className="bg-slate-200 p-4">
+    <section className="bg-slate-200 px-8 py-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {/* Left side - Slider (8 columns) */}
           <div className="lg:col-span-8 bg-white rounded-lg">
             <Slider {...settings}>
               {slides.map((slide, index) => (
-                <div key={index} className="relative h-[400px]">
+                <div key={index} className="relative h-[300px]">
                   <div className="grid grid-cols-2 h-full">
                     <div className="flex items-center p-8">
                       <div className={`space-y-6 transition-all duration-1000 ${
@@ -78,12 +78,12 @@ const HeroSection = () => {
                           "opacity-100 translate-y-0" : 
                           "opacity-0 translate-y-10"
                       }`}>
-                        <h1 className="text-4xl font-bold text-gray-900">
+                        <h1 className="text-xl md:text-3xl font-bold text-gray-900">
                           <div>{slide.title}</div>
-                          <div className="text-xl text-red-400">{slide.description}</div>
+                          <div className="text-sm md:text-lg text-red-400">{slide.description}</div>
                         </h1>
-                        <button className="bg-orange-500 hover:bg-orange-600 font-bold text-white px-8 py-3 rounded-lg">
-                          Shop Now
+                        <button className="bg-orange-500 hover:bg-orange-600 font-bold text-white px-10 py-1 rounded-lg">
+                          Shop
                         </button>
                       </div>
                     </div>

@@ -7,7 +7,7 @@ export function FlipWordsComponent() {
   return (
     <div className="w-full bg-yellow-500">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center py-2 md:py-4 text-xl md:text-3xl">
+        <div className="flex items-center justify-center py-1 text-xl md:text-2xl">
              
           <FlipWords 
             words={words} 
