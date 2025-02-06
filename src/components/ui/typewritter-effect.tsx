@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export const TypewriterEffect = ({
   words,
@@ -16,6 +16,7 @@ export const TypewriterEffect = ({
   className?: string;
   cursorClassName?: string;
 }) => {
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
     return {
@@ -40,9 +41,11 @@ export const TypewriterEffect = ({
           delay: stagger(0.1),
           ease: "easeInOut",
         }
-      );
+      ).then(() => {
+        setIsTypingComplete(true);
+      });
     }
-  }, [isInView]);
+  }, [animate, isInView]);
 
   const renderWords = () => {
     return (
@@ -78,22 +81,20 @@ export const TypewriterEffect = ({
     >
       {renderWords()}
       <motion.span
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: isTypingComplete ? 0 : 1,
+          transition: {
+            duration: 0.8,
+            repeat: isTypingComplete ? 0 : Infinity,
+            repeatType: "reverse",
+          }
         }}
         className={cn(
           "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
           cursorClassName
         )}
-      ></motion.span>
+      />
     </div>
   );
 };
@@ -110,6 +111,7 @@ export const TypewriterEffectSmooth = ({
   className?: string;
   cursorClassName?: string;
 }) => {
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
     return {
@@ -154,6 +156,7 @@ export const TypewriterEffectSmooth = ({
           ease: "linear",
           delay: 1,
         }}
+        onAnimationComplete={() => setIsTypingComplete(true)}
       >
         <div className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold nowrap-text">
           {renderWords()}{" "}
@@ -169,7 +172,7 @@ export const TypewriterEffectSmooth = ({
         transition={{
           duration: 0.8,
 
-          repeat: Infinity,
+          repeat: isTypingComplete ? 0 : Infinity,
           repeatType: "reverse",
         }}
         className={cn(

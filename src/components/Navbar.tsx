@@ -9,12 +9,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-800 text-white">
+      <nav className="bg-white text-black p-2">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-lg font-medium">TeeBuy</h1>
+              <h1 className="text-lg font-bold">ELIMELI</h1>
             </div>
 
             {/* Desktop Search - Hidden on mobile */}
@@ -36,19 +36,19 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <ul className="flex space-x-6">
                 <li>
-                  <a href="/" className="flex items-center gap-x-1.5 hover:text-gray-300 transition-colors">
+                  <a href="/" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconHome size={20} />
                     <span className="text-sm">Home</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/cart" className="flex items-center gap-x-1.5 hover:text-gray-300 transition-colors">
+                  <a href="/cart" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconShoppingCart size={20} stroke={1.5} />
                     <span className="text-sm">Cart</span>
                   </a>
                 </li>
                 <li>
-                  <a href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-300 transition-colors">
+                  <a href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconUser size={20} />
                     <span className="text-sm">SignIn</span>
                   </a>

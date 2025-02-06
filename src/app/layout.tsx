@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { TypewriterText } from "@/components/TypewriterText";
+import CategoryBar from "@/components/CategoryBar";
+import { FlipWordsComponent } from "@/components/FlipWords";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TypewriterText />
+        <FlipWordsComponent />
+        <CategoryBar />
         <Navbar />
         {children}
       </body>

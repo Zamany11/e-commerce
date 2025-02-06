@@ -1,6 +1,5 @@
 "use client";
 import { TypewriterEffect } from "../components/ui/typewritter-effect";
-import { FlipWordsComponent } from "./FlipWords";
 
 export function TypewriterText() {
   const words = [
@@ -44,10 +43,11 @@ export function TypewriterText() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[ 10rem] ">
-    
-      <TypewriterEffect words={words} />
-      <FlipWordsComponent />
+    <div>
+      <div  className="flex flex-col items-center justify-center h-[ 10rem] ">
+        <TypewriterEffect words={words} />
+      </div>
+      
       
     </div>
   );
