@@ -32,19 +32,19 @@ const Navbar = () => {
                   </button>
                 </li>
                 <li>
-                  <a href="/" className="hover:text-gray-600" title="Home">
+                  <Link href="/" className="hover:text-gray-600" title="Home">
                     <IconHome size={24} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/cart" className="hover:text-gray-600" title="Cart">
+                  <Link href="/cart" className="hover:text-gray-600" title="Cart">
                     <IconShoppingCart size={24} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/signin" className="hover:text-gray-600" title="Sign In">
+                  <Link href="/signin" className="hover:text-gray-600" title="Sign In">
                     <IconUser size={24} />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -53,52 +53,27 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <ul className="flex space-x-6">
                 <li>
-                  <a href="/" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
+                  <Link href="/" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconHome size={20} />
                     <span className="text-sm">Home</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/cart" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
+                  <Link href="/cart" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconShoppingCart size={20} stroke={1.5} />
                     <span className="text-sm">Cart</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
+                  <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconUser size={20} />
                     <span className="text-sm">SignIn</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        
-          <div className="md:hidden bg-yellow-400 p-4">
-            <ul className="space-y-4">
-              <li>
-                <Link href="/" className="flex items-center gap-x-2 text-lg">
-                  <IconHome size={24} />
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/cart" className="flex items-center gap-x-2 text-lg">
-                  <IconShoppingCart size={24} />
-                  Cart
-                </Link>
-              </li>
-              <li>
-                <Link href="/signin" className="flex items-center gap-x-2 text-lg">
-                  <IconUser size={24} />
-                  SignIn
-                </Link>
-              </li>
-            </ul>
-          </div>
       
       </nav>
 

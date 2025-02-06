@@ -79,6 +79,8 @@ const FlashSaleCard = ({ products, endTime }: FlashSaleCardProps) => {
                 src={product.imageUrl} 
                 alt={product.title} 
                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                width={200}
+                height={200}
               />
             </div>
 
