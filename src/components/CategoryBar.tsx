@@ -29,7 +29,7 @@ export default function CategoryBar() {
     };
 
     return (
-        <section className="  bg-red-600">
+        <section className="  bg-orange-500">
             <div className="container mx-auto">
                 {/* Desktop View - hidden on mobile */}
                 <ul className="hidden md:flex items-center justify-between p-5">
@@ -37,7 +37,7 @@ export default function CategoryBar() {
                         <li
                             key={category}
                             className={`font-bold hover:text-slate-100 cursor-pointer transition-colors ${
-                                selectedCategory === index ? 'text-white' : 'text-gray-200'
+                                selectedCategory === index ? 'text-white' : 'text-orange-100'
                             }`}
                             style={{ 
                                 borderBottom: selectedCategory === index ? '2px solid white' : 'none',
@@ -60,7 +60,7 @@ export default function CategoryBar() {
                             >
                                 <div
                                     className={`font-bold hover:text-slate-100 cursor-pointer transition-colors ${
-                                        selectedCategory === index ? 'text-white' : 'text-gray-200'
+                                        selectedCategory === index ? 'text-white' : 'text-orange-100'
                                     } ${category === 'Smartphones' ? 'pr-2' : ''}`}
                                     style={{ 
                                         borderBottom: selectedCategory === index ? '2px solid white' : 'none',

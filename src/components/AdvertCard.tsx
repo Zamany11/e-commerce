@@ -1,25 +1,63 @@
-export default function AdvertCard () {
-    return(
-        <section className="bg-slate-100 pt-8 md:py-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 container mx-auto bg-white rounded-md text-white text-xl md:text-3xl text-center">
-                <div className="bg-orange-500 rounded-lg p-5 font-semi-bold">
-                    Become A Seller With Just One Click, Earn Multiple Royalties
-                    <div>
-                    <button className="bg-red-600 hover:bg-red-700 font-bold text-orange-100 px-10 py-2 mt-5 rounded-lg">
-                          Start Selling
-                        </button>
-                    </div>
-                </div>
-                <div className=" hidden md:grid bg-red-500 rounded-lg p-5 font-semi-bold">
-                    Sign Up As Our Affiliate and Enjoy Huge Commissions
-                    <div>
-                    <button className="bg-orange-400 hover:bg-orange-500 font-bold text-red-600 px-10 py-2 mt-5 rounded-lg">
-                          Sign Up
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
-}
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
 
+export default function AdvertCard() {
+  return (
+    <section className="bg-slate-100 pt-8 md:py-4">
+      {/* Desktop Grid */}
+      <div className="hidden md:grid grid-cols-2 gap-4 p-4 container mx-auto bg-white rounded-md">
+        <img 
+          src="/images/ELIMELI.png" 
+          alt="Become a seller - earn royalties"
+          className="w-full h-auto rounded-lg"
+          loading="lazy"
+        />
+        <img 
+          src="/images/ELIMELI (1).png" 
+          alt="Affiliate signup - huge commissions"
+          className="w-full h-auto rounded-lg"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Mobile Slider */}
+      <div className="md:hidden swiper-container py-2">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            waitForTransition: false
+          }}
+          speed={1000}
+          
+          loop={true}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          className="px-4"
+        >
+          <SwiperSlide>
+            <img
+              src="/images/ELIMELI.png"
+              alt="Become a seller"
+              className="w-full h-auto rounded-lg"
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/images/ELIMELI (1).png"
+              alt="Affiliate signup"
+              className="w-full h-auto rounded-lg"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </section>
+  );
+}
