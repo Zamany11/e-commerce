@@ -1,6 +1,7 @@
 import CategoryBar from "@/components/CategoryBar";
 import FeaturedProductList from "@/components/FeaturedProductList";
 import HeroSection from "@/components/HeroSection";
+import NewsLetter from "@/components/NewsLetter";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <CategoryBar />
       <HeroSection />
       <FeaturedProductList />
+      <NewsLetter />
     </div>
   );
 }
