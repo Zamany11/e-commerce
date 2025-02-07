@@ -63,14 +63,14 @@ const HeroSection = () => {
     }
   ];
   return (
-    <section className="bg-slate-200 px-8 py-4">
+    <section className="bg-slate-200 md:px-8 py-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           {/* Left side - Slider (8 columns) */}
           <div className="lg:col-span-8 bg-white rounded-lg">
             <Slider {...settings}>
               {slides.map((slide, index) => (
-                <div key={index} className="relative h-[300px]">
+                <div key={index} className="relative h-[300px] md:h-[400px]">
                   <div className="grid grid-cols-2 h-full">
                     <div className="flex items-center p-8">
                       <div className={`space-y-6 transition-all duration-1000 ${
@@ -103,30 +103,36 @@ const HeroSection = () => {
           </div>
 
           {/* Right side - Cards (4 columns) */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-4">
-            {rightCards.map((card, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 flex flex-col">
-                <div className="h-[60%] relative mb-2">
-                <Image
-                  src={card.icon}
-                  alt={card.title}
-                  fill
-                  className="object-contain p-4"
-                />
-                </div>
-                <div className="text-center">
-        <h3 className="font-semibold text-gray-800 text-sm mb-1">
-          {card.title}
-        </h3>
-        <p className="text-orange-500 text-xs">
-          {card.description}
-        </p>
-      </div>
-              </div>
-            ))}
-          </div>
+<div className="lg:col-span-4">
+  <div className="flex lg:grid lg:grid-cols-2 overflow-x-auto lg:overflow-hidden gap-4 pb-4 [&::-webkit-scrollbar]:hidden">
+    {rightCards.map((card, index) => (
+      <div 
+        key={index} 
+        className="bg-white rounded-lg p-4 flex flex-col flex-shrink-0 w-[60vw] lg:w-auto"
+      >
+        <div className="h-[70px] md:h-[100px] relative mb-2">
+          <Image
+            src={card.icon}
+            alt={card.title}
+            fill
+            className="object-contain p-4"
+          />
+        </div>
+        <div className="text-center">
+          <h3 className="font-semibold text-gray-800 text-sm mb-1">
+            {card.title}
+          </h3>
+          <p className="text-orange-500 text-xs">
+            {card.description}
+          </p>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+</div>
+</div>
+
 
       <style jsx global>{`
         .slick-dots {

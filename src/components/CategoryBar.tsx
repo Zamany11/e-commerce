@@ -29,10 +29,10 @@ export default function CategoryBar() {
     };
 
     return (
-        <section className="  bg-orange-500">
-            <div className="container mx-auto">
+        <section className="  bg-orange-500 container mx-auto md:mt-5 md:rounded-sm">
+            <div className="container mx-auto md:px-5">
                 {/* Desktop View - hidden on mobile */}
-                <ul className="hidden md:flex items-center justify-between p-5">
+                <ul className="hidden md:flex items-center justify-between py-5">
                     {categories.map((category, index) => (
                         <li
                             key={category}

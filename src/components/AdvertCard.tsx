@@ -28,7 +28,7 @@ export default function AdvertCard() {
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{
-            delay: 0,
+            delay: 3000,
             disableOnInteraction: false,
             waitForTransition: false
           }}
@@ -44,7 +44,7 @@ export default function AdvertCard() {
             <img
               src="/images/ELIMELI.png"
               alt="Become a seller"
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto"
               loading="lazy"
             />
           </SwiperSlide>
@@ -52,7 +52,7 @@ export default function AdvertCard() {
             <img
               src="/images/ELIMELI (1).png"
               alt="Affiliate signup"
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto"
               loading="lazy"
             />
           </SwiperSlide>

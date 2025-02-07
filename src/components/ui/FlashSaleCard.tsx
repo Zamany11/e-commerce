@@ -62,13 +62,14 @@ const FlashSaleCard = ({ products, endTime, title = "Flash Sale" }: FlashSaleCar
           <span className="font-bold">{title}</span>
         </div>
         <div className="flex items-center gap-2">
-          <span>Time Left:</span>
-          <span className="font-mono">
-            {String(timeLeft.hours).padStart(2, '0')}h : 
-            {String(timeLeft.minutes).padStart(2, '0')}m : 
-            {String(timeLeft.seconds).padStart(2, '0')}s
-          </span>
-        </div>
+              <span>Time Left:</span>
+              <span className="font-mono">
+                {String(timeLeft.hours).padStart(2, '0')}h : 
+                {String(timeLeft.minutes).padStart(2, '0')}m : 
+                {String(timeLeft.seconds).padStart(2, '0')}s
+              </span>
+            </div>
+              
       </div>
 
       {/* Product Cards Container */}
