@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import AdvertCard from "./AdvertCard";
 import FlashSaleCard from "./ui/FlashSaleCard";
-import LogoMarquee from "./LogoMarquee";
 import { products } from "./products";
 
 const FeaturedProductList = () => {

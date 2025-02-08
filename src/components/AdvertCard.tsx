@@ -3,12 +3,11 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
+import Image from 'next/image';
 
 export default function AdvertCard() {
   return (
     <section className="bg-slate-100 pt-8 md:py-4">
-      
-
       {/* Slider */}
       <div className=" container mx-auto py-2 px-4 bg-white">
         <Swiper
@@ -27,19 +26,23 @@ export default function AdvertCard() {
           className="px-4"
         >
           <SwiperSlide>
-            <img
+            <Image
               src="/images/ELIMELI.png"
               alt="Become a seller"
               className="w-full h-auto md:h-[250px] rounded-md"
               loading="lazy"
+              width={2000}
+              height={2000}
             />
           </SwiperSlide>
           <SwiperSlide>
-            <img
+            <Image
               src="/images/ELIMELI (1).png"
               alt="Affiliate signup"
               className="w-full h-auto md:h-[250px] rounded-md"
               loading="lazy"
+              width={2000}
+              height={2000}
             />
           </SwiperSlide>
         </Swiper>
