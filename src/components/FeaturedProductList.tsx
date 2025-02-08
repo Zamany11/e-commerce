@@ -44,9 +44,7 @@ const FeaturedProductList = () => {
         title="Flash Sales"
       />
 
-      <div className="my-8">
-        <LogoMarquee /> 
-      </div>
+      
 
       <FlashSaleCard
         endTime={endTime}

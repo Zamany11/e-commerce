@@ -7,24 +7,10 @@ import 'swiper/css/pagination';
 export default function AdvertCard() {
   return (
     <section className="bg-slate-100 pt-8 md:py-4">
-      {/* Desktop Grid */}
-      <div className="hidden md:grid grid-cols-2 gap-4 p-4 container mx-auto bg-white rounded-md">
-        <img 
-          src="/images/ELIMELI.png" 
-          alt="Become a seller - earn royalties"
-          className="w-full h-auto rounded-lg"
-          loading="lazy"
-        />
-        <img 
-          src="/images/ELIMELI (1).png" 
-          alt="Affiliate signup - huge commissions"
-          className="w-full h-auto rounded-lg"
-          loading="lazy"
-        />
-      </div>
+      
 
-      {/* Mobile Slider */}
-      <div className="md:hidden swiper-container py-2">
+      {/* Slider */}
+      <div className=" container mx-auto py-2 px-4 bg-white">
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{
@@ -44,7 +30,7 @@ export default function AdvertCard() {
             <img
               src="/images/ELIMELI.png"
               alt="Become a seller"
-              className="w-full h-auto"
+              className="w-full h-auto md:h-[250px] rounded-md"
               loading="lazy"
             />
           </SwiperSlide>
@@ -52,7 +38,7 @@ export default function AdvertCard() {
             <img
               src="/images/ELIMELI (1).png"
               alt="Affiliate signup"
-              className="w-full h-auto"
+              className="w-full h-auto md:h-[250px] rounded-md"
               loading="lazy"
             />
           </SwiperSlide>

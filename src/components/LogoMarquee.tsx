@@ -14,7 +14,7 @@ const logos = [
 
 const LogoMarquee = () => {
   return (
-    <section className="pb-5 md:px-8 md:rounded-md">
+    <section className=" md:rounded-md">
       <div className="logo-marquee-container md:rounded-sm">
       <h2 className="title py-2 mb-4 font-bold text-orange-100">Trusted By Our Top Brands</h2>
       <Marquee speed={50} gradient={false} pauseOnHover={true}>
