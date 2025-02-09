@@ -13,14 +13,7 @@ interface CategoryBarProps {
 export default function CategoryBar({ onCategoryChange }: CategoryBarProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>('Featured');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => window.innerWidth < 768;
-        setIsMobile(checkMobile());
-        window.addEventListener('resize', () => setIsMobile(checkMobile()));
-        return () => window.removeEventListener('resize', () => setIsMobile(checkMobile()));
-    }, []);
+   
 
     const handleMobileCategorySelect = (category: string) => {
         if (category === 'Smartphones') {

@@ -31,8 +31,9 @@ interface ProductCard {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             {productcards.map((product, index) => (
               
-                <div className="bg-white rounded-lg shadow-md p-3 md:p-4 relative">
+                <div key={index} className="bg-white rounded-lg shadow-md p-3 md:p-4 relative">
                   {/* Discount Badge */}
+                 
                   <div className="absolute top-2 left-2 bg-orange-100 text-orange-500 px-2 py-1 rounded-md">
                     -{product.discount}%
                   </div>
