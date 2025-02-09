@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProductCard {
     title: string;
@@ -7,6 +8,7 @@ interface ProductCard {
     discount: number;
     imageUrl: string;
     category: string;
+    slug: string;
   }
 
   interface ProductCardProps {
@@ -30,8 +32,8 @@ interface ProductCard {
           {/* Product Cards Container */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             {productcards.map((product, index) => (
-              
-                <div key={index} className="bg-white rounded-lg shadow-md p-3 md:p-4 relative">
+              <Link key={index}  href={`/product/${product.slug}`}>
+                <div className="bg-white rounded-lg shadow-md p-3 md:p-4 relative">
                   {/* Discount Badge */}
                  
                   <div className="absolute top-2 left-2 bg-orange-100 text-orange-500 px-2 py-1 rounded-md">
@@ -57,7 +59,7 @@ interface ProductCard {
                         </div>
                       </div>
                     </div>
-              
+                    </Link>
             ))}
           </div>
         </div>
