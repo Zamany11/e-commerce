@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server';
 import { AllProducts } from '../../../../components/AllProducts'; // Your products data source
 
 export async function GET(
-  request: Request,
-  { params }: { params: { slug: string } }
+  _request: Request,
+  context: { params: { slug: string } }
 ) {
+  const { params } = context;
   const product = AllProducts.find(p => p.slug === params.slug);
   
   if (!product) {

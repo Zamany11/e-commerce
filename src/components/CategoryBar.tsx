@@ -12,8 +12,7 @@ interface CategoryBarProps {
 
 export default function CategoryBar({ onCategoryChange }: CategoryBarProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>('Featured');
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-   
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
 
     const handleMobileCategorySelect = (category: string) => {
         if (category === 'Smartphones') {
