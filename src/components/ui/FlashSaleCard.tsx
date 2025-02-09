@@ -9,6 +9,7 @@ interface Product {
   oldPrice: number;
   discount: number;
   imageUrl: string;
+  category: string;
 }
 
 interface FlashSaleCardProps {

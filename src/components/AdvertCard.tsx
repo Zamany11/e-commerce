@@ -37,7 +37,7 @@ export default function AdvertCard() {
           </SwiperSlide>
           <SwiperSlide>
             <Image
-              src="/images/ELIMELI (1).png"
+              src="/images/ELIMELI (2).png"
               alt="Affiliate signup"
               className="w-full h-auto md:h-[250px] rounded-md"
               loading="lazy"

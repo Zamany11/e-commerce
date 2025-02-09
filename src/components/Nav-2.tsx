@@ -12,12 +12,14 @@ export default function Nav2() {
                     </li>
                     <li>
                     <Link href="/">
-                      <span>Blog</span>
+                      <span>Sell on Zitech</span>
                     </Link>
                     </li>
-                    <Link href="/">
-                      <span>Sell on Elimeli</span>
+                    <li>
+                      <Link href="/">
+                      <span>Affiliate</span>
                    </Link>
+                    </li> 
                 </ul>
                 
               </div>

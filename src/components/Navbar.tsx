@@ -10,12 +10,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white text-black p-2">
+      <nav className="bg-white text-black p-2 sticky z-10 top-0 w-full shadow">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-lg font-bold">ELIMELI</h1>
+              <h1 className="text-lg font-bold">ZITECH</h1>
             </div>
 
             {/* Desktop Search - Hidden on mobile */}
@@ -67,7 +67,7 @@ const Navbar = () => {
                 <li>
                   <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
                     <IconUser size={20} />
-                    <span className="text-sm">SignIn</span>
+                    <span className="text-sm">SignIn / Register</span>
                   </Link>
                 </li>
               </ul>
