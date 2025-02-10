@@ -1,16 +1,18 @@
 import Image from "next/image";
-import { AllProducts } from "@/components/AllProducts"; // Adjust the import path as needed
+import { AllProducts } from "@/components/AllProducts";
 
-// Define the type for the route parameters
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ProductPage({ params }: PageProps) {
-  // Find the product based on the slug parameter
-  const product = AllProducts.find((p) => p.slug === params.slug);
+export default async function ProductPage({ params }: PageProps) {
+  // Resolve the params promise first
+  const { slug } = await params;
+  
+  // Now use the resolved slug
+  const product = AllProducts.find((p) => p.slug === slug);
 
   if (!product) {
     return (
@@ -19,7 +21,7 @@ export default function ProductPage({ params }: PageProps) {
       </div>
     );
   }
-
+  
   return (
     <div className="container mx-auto p-4 text-black">
       {/* Responsive layout: column on small screens, row on medium and above */}
