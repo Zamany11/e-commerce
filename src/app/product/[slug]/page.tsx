@@ -36,6 +36,7 @@ export default async function ProductPage({ params }: PageProps) {
               height={500}
               className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
             />
+            
           </div>
         </div>
 

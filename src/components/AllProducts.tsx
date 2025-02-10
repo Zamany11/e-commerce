@@ -6,7 +6,9 @@ export const AllProducts = [
       discount: 22,
       imageUrl: "/images/IMG_9692.webp",
       category: "Iphones",
-      slug: "product-1"
+      slug: "product-1",
+      description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
     },
     {
       title: "Samsung Galaxy S24 Ultra",
@@ -15,7 +17,9 @@ export const AllProducts = [
       discount: 21,
       imageUrl: "/images/IMG_9696.webp",
       category: "Samsung",
-      slug: "product-2"
+      slug: "product-2",
+      description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
     },
     {
       title: "Itel 8 Pro",
@@ -24,7 +28,9 @@ export const AllProducts = [
       discount: 20,
       imageUrl: "/images/IMG_9707.webp",
       category: "Itel",
-      slug: "product-3"
+      slug: "product-3",
+      description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
     },
     {
       title: "Xiaomi 14 Pro",
@@ -33,7 +39,9 @@ export const AllProducts = [
       discount: 19,
       imageUrl: "/images/IMG_9701.webp",
       category: "Redmi",
-      slug: "product-4"
+      slug: "product-4",
+      description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
     },
     {
         title: "Xiaomi 14 Pro",
@@ -42,7 +50,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9704.webp",
         category: "Redmi",
-        slug: "product-5"
+        slug: "product-5",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -51,7 +61,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9706.webp",
         category: "Redmi",
-        slug: "product-6"
+        slug: "product-6",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -60,7 +72,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9710.webp",
         category: "Accessories",
-        slug: "product-7"
+        slug: "product-7",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -69,7 +83,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9709.webp",
         category: "Accessories",
-        slug: "product-8"
+        slug: "product-8",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -78,7 +94,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9708.webp",
         category: "Redmi",
-        slug: "product-9"
+        slug: "product-9",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -87,7 +105,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9705.webp",
         category: "Redmi",
-        slug: "product-10"
+        slug: "product-10",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -96,7 +116,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9702.webp",
         category: "Accessories",
-        slug: "product-11"
+        slug: "product-11",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -105,7 +127,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Accessories",
-        slug: "product-12"
+        slug: "product-12",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
 
       {
@@ -115,7 +139,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Iphones",
-        slug: "product-13"
+        slug: "product-13",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -124,7 +150,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Iphones",
-        slug: "product-14"
+        slug: "product-14",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -133,7 +161,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Techno",
-        slug: "product-15"
+        slug: "product-15",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -142,7 +172,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Techno",
-        slug: "product-16"
+        slug: "product-16",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -151,7 +183,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Infinix",
-        slug: "product-17"
+        slug: "product-17",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -160,7 +194,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Infinix",
-        slug: "product-18"
+        slug: "product-18",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -169,7 +205,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Itel",
-        slug: "product-19"
+        slug: "product-19",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -178,7 +216,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Itel",
-        slug: "product-20"
+        slug: "product-20",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -187,7 +227,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Itel",
-        slug: "product-21"
+        slug: "product-21",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -196,7 +238,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Iphones",
-        slug: "product-22"
+        slug: "product-22",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -205,7 +249,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Techno",
-        slug: "product-23"
+        slug: "product-23",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -214,7 +260,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Infinix",
-        slug: "product-24"
+        slug: "product-24",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -223,7 +271,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Techno",
-        slug: "product-25"
+        slug: "product-25",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -232,7 +282,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Infinix",
-        slug: "product-26"
+        slug: "product-26",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -241,7 +293,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Samsung",
-        slug: "product-27"
+        slug: "product-27",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -250,7 +304,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Samsung",
-        slug: "product-28"
+        slug: "product-28",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -259,7 +315,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Samsung",
-        slug: "product-29"
+        slug: "product-29",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -268,7 +326,9 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Samsung",
-        slug: "product-30"
+        slug: "product-30",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
       {
         title: "Xiaomi 14 Pro",
@@ -277,6 +337,8 @@ export const AllProducts = [
         discount: 19,
         imageUrl: "/images/IMG_9703.webp",
         category: "Infinix",
-        slug: "product-31"
+        slug: "product-31",
+        description: "This is a detailed description of the product. It includes features, specifications, warranty details, and other relevant information to help customers make an informed decision.",
+      specs: "Dual SIM', '5G Connectivity', 'IP68 Rating"
       },
   ];

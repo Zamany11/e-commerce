@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProductCard {
-    title: string;
-    price: number;
-    oldPrice: number;
-    discount: number;
-    imageUrl: string;
-    category: string;
-    slug: string;
+  title: string;
+  price: number;
+  oldPrice: number;
+  discount: number;
+  imageUrl: string;
+  category: string;
+  slug: string;
   }
 
   interface ProductCardProps {
