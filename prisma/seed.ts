@@ -1,35 +1,21 @@
 import { PrismaClient } from '@prisma/client'
+import { AllProducts } from "../src/components/AllProducts";
 
 const prisma = new PrismaClient()
 
-interface Product {
-    id: string;
-    slug: string;
-    title: string;
-    price: number;
-    oldPrice?: number;
-    description: string;
-    imageUrl: string[];
-    specs: string[];
-    category: string;
-    discount?: number;
-  }
-
-const AllProducts: Product[] = [/* your product array */]
+const allProductsData = AllProducts
 
 async function main() {
-  // Clear existing products
-  await prisma.product.deleteMany()
 
   // Create products with transformed data
-  const products = AllProducts.map(product => ({
+  const products = allProductsData.map(product => ({
     title: product.title,
     slug: product.slug,
     price: product.price,
     oldPrice: product.oldPrice,
     description: product.description,
-    images: product.imageUrl, // Use the imageUrl array directly
-    specs: product.specs,
+    images: [product.imageUrl], // Use the imageUrl array directly
+    specs: [product.specs],
     category: product.category,
     discount: product.discount
   }))
