@@ -1,20 +1,15 @@
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/db'
 
-const prisma = new PrismaClient();
-
-
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params; // Await the Promise
+  
   const product = await prisma.product.findUnique({
-    where: {
-      slug: params.slug
-    },
+    where: { slug }
   });
 
   if (!product) {
@@ -76,13 +71,12 @@ export default async function ProductPage({ params }: PageProps) {
   );
 }
 
-// Add explicit return type for generateStaticParams
-export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
+export async function generateStaticParams() {
   const products = await prisma.product.findMany({
-    select: {
-      slug: true
-    }
-  });
-
-  return products.map(product => ({ slug: product.slug }));
+    select: { slug: true },
+    take: 50 // Limit concurrent connections
+  })
+  return products.map(p => ({
+    slug: p.slug // Match expected Promise structure
+  }));
 }
