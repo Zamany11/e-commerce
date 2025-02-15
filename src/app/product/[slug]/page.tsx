@@ -28,6 +28,14 @@ export default async function ProductPage({
     );
   }
 
+  const relatedProducts = await prisma.product.findMany({
+    where: {
+      title: {
+        startsWith: `${product.title.split(' ')[0]}`,
+      },
+    },
+  })
+
   return (
     <div className="container mx-auto p-4 text-black">
       <div className="flex flex-col md:flex-row gap-8">
@@ -46,8 +54,9 @@ export default async function ProductPage({
 
         <div className="md:w-1/2">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+          <hr className="mb-4 text-gray-700"/>
           <div className="mb-4">
-            <span className="text-2xl text-red-600 font-bold">
+            <span className="text-5xl text-red-600 font-bold">
               ₦{product.price.toLocaleString()}
             </span>
             {product.oldPrice && (
@@ -61,10 +70,47 @@ export default async function ProductPage({
               </span>
             )}
           </div>
-          <p className="mb-6">{product.description}</p>
+          <div>
+            <span className="font-bold text-2xl py-4 text-gray-600">Key Features</span>
+            <p className="my-4">{product.specs}</p>
+          </div>
+          <div>
+            <span className="font-bold text-2xl py-4 text-gray-600">Product Description</span>
+            <p className="mb-6">{product.description}</p>
+          </div>
           <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors">
             Add to Cart
           </button>
+        </div>
+      </div>
+      <div>
+        <h2 className="text-2xl font-bold mt-8">Related Products</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+          {relatedProducts.map(relatedProduct => (
+            <div key={relatedProduct.id} className="bg-white p-4 rounded shadow">
+              <div className="relative w-full aspect-square overflow-hidden">
+                <Image
+                  src={relatedProduct.images[0]}
+                  alt={relatedProduct.title}
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  priority
+                />
+              </div>
+              <h3 className="text-lg font-semibold mt-4">{relatedProduct.title}</h3>
+              <div className="flex justify-between md:flex-row flex-col mt-2">
+                <span className="text-red-600 font-bold">
+                  ₦{relatedProduct.price.toLocaleString()}
+                </span>
+                {relatedProduct.oldPrice && (
+                  <span className="text-gray-500 line-through text-sm">
+                    ₦{relatedProduct.oldPrice.toLocaleString()}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
