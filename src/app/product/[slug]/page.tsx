@@ -1,5 +1,6 @@
 import Image from "next/image";
 import prisma from '@/lib/db'
+import { AddToCart } from "@/components/AddToCart";
 
 export default async function ProductPage({
   params
@@ -40,7 +41,11 @@ export default async function ProductPage({
     <div className="container mx-auto p-4 text-black">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
+        
           <div className="relative w-full aspect-square overflow-hidden">
+          <div className="absolute top-2 left-2 bg-orange-100 text-orange-500 px-2 py-1 rounded-md">
+              -{product.discount}%
+            </div>
             <Image
               src={product.images[0]}
               alt={product.title}
@@ -55,21 +60,7 @@ export default async function ProductPage({
         <div className="md:w-1/2">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
           <hr className="mb-4 text-gray-700"/>
-          <div className="mb-4">
-            <span className="text-5xl text-red-600 font-bold">
-              ₦{product.price.toLocaleString()}
-            </span>
-            {product.oldPrice && (
-              <span className="text-gray-500 line-through ml-4">
-                ₦{product.oldPrice.toLocaleString()}
-              </span>
-            )}
-            {product.discount && (
-              <span className="text-green-600 ml-4 font-semibold">
-                -{product.discount}%
-              </span>
-            )}
-          </div>
+          
           <div>
             <span className="font-bold text-2xl py-4 text-gray-600">Key Features</span>
             <p className="my-4">{product.specs}</p>
@@ -78,9 +69,19 @@ export default async function ProductPage({
             <span className="font-bold text-2xl py-4 text-gray-600">Product Description</span>
             <p className="mb-6">{product.description}</p>
           </div>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors">
-            Add to Cart
-          </button>
+          <div className="mb-4 flex flex-col md:flex-row">
+            <span className="text-5xl text-red-600 font-bold">
+              ₦{product.price.toLocaleString()}
+            </span>
+            {product.oldPrice && (
+              <span className="text-gray-500 line-through md:ml-4">
+                ₦{product.oldPrice.toLocaleString()}
+              </span>
+            )}
+            
+          </div>
+          <AddToCart product={product} />
+          
         </div>
       </div>
       <div>
@@ -98,13 +99,13 @@ export default async function ProductPage({
                   priority
                 />
               </div>
-              <h3 className="text-lg font-semibold mt-4">{relatedProduct.title}</h3>
+              <h3 className="text-sm md:text-lg font-semibold mt-4">{relatedProduct.title}</h3>
               <div className="flex justify-between md:flex-row flex-col mt-2">
                 <span className="text-red-600 font-bold">
                   ₦{relatedProduct.price.toLocaleString()}
                 </span>
                 {relatedProduct.oldPrice && (
-                  <span className="text-gray-500 line-through text-sm">
+                  <span className="text-gray-500 line-through text-sm hidden md:block">
                     ₦{relatedProduct.oldPrice.toLocaleString()}
                   </span>
                 )}
