@@ -87,7 +87,7 @@ export default async function ProductPage({
       <div>
         <h2 className="text-2xl font-bold mt-8">Related Products</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-          {relatedProducts.map(relatedProduct => (
+          {relatedProducts.slice(0, 4).map(relatedProduct => (
             <div key={relatedProduct.id} className="bg-white p-4 rounded shadow">
               <div className="relative w-full aspect-square overflow-hidden">
                 <Image

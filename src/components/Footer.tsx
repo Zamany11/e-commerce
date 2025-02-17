@@ -1,13 +1,15 @@
-import NewsLetter from "./NewsLetter"
+import Link from "next/link";
+import NewsLetter from "./NewsLetter";
+
 
 export default function Footer() {
 
    
 
     return(
-        <section className="bg-gray-800 text-white">
-            <div className="px-8 md:px-20 py-5 flex items-center justify-between">
-                <div className="hidden md:block ">
+        <section className="bg-gray-800 text-white py-3">
+            <div className="px-8 md:px-20 py-5 flex flex-col md:flex-row justify-between">
+                <div className="mb-6">
                     <div className="mb-3">
                       <h1 className="font-bold">ELIMELI</h1>  
                     </div>
@@ -23,12 +25,13 @@ export default function Footer() {
                     </div>
                 </div>
                 <NewsLetter />
-                <div className="hidden md:block">
-                    <div className="mb-3">
+                <div className="hidden md:block ">
+                    <div className="">
+                        <div className="mb-3">
                         <span className="font-bold">Ouick Links</span> 
                     </div>
                     
-                    <div>
+                    <div className="">
                         <ul >
                             <li>About Us</li>
                             <li>Sell on Zitech</li>
@@ -43,8 +46,13 @@ export default function Footer() {
                             <li>Mobile Accessories</li>
                         </ul>
                     </div>
+                    </div>
                 </div>
             </div>
+                
+                <div className="border-t border-gray-600 mt-8 pt-8 text-center px-8">
+                  <p>&copy; {new Date().getFullYear()} Developed by Zitech. All rights reserved.</p>
+               </div>
         </section>
     )
 }

@@ -6,9 +6,9 @@ export default function NewsLetter() {
   const [email, setEmail] = useState("");
   return(
     <div>
-        <span>New To Zitech?</span>
+        <span className="font-bold">New To Zitech?</span>
         <p>Subscribe to our Newsletter to get updates on best offers!</p>
-          <form className="max-w-md flex-1">
+          <form className="max-w-md flex-1 mt-3">
             <div className="relative group">
               <input
                 type="text"

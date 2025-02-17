@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import HomePage from "@/components/HomePage";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -13,7 +12,6 @@ export default function Home() {
       <div className="mt-8">
         <LogoMarquee /> 
       </div>
-      <Footer />
     </div>
   );
 }

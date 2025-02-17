@@ -3,9 +3,13 @@ import { IconHome, IconUser, IconShoppingCart, IconSearch } from "@tabler/icons-
 import { useState } from "react";
 import Search from "./Search";
 import Link from "next/link";
+import { useCart } from '@/hooks/use-cart'; 
+
 
 const Navbar = () => {
   
+  const { items } = useCart(); // Get cart items from store
+  const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0)
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   return (
@@ -37,9 +41,16 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cart" className="hover:text-gray-600" title="Cart">
-                    <IconShoppingCart size={24} />
-                  </Link>
+                <Link href="/cart" className="hover:text-gray-600 relative" title="Cart">
+    <div className="relative">
+      <IconShoppingCart size={24} />
+      {cartItemCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
+          {cartItemCount}
+        </span>
+      )}
+    </div>
+  </Link>
                 </li>
                 <li>
                   <Link href="/signin" className="hover:text-gray-600" title="Sign In">
@@ -59,10 +70,20 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cart" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
-                    <IconShoppingCart size={20} stroke={1.5} />
-                    <span className="text-sm">Cart</span>
-                  </Link>
+                <Link 
+    href="/cart" 
+    className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors"
+  >
+    <div className="relative">
+      <IconShoppingCart size={20} stroke={1.5} />
+      {cartItemCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
+          {cartItemCount}
+        </span>
+      )}
+    </div>
+    <span className="text-sm">Cart</span>
+  </Link>
                 </li>
                 <li>
                   <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
