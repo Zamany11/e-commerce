@@ -1,6 +1,5 @@
 // hooks/use-cart.ts
 import { create } from 'zustand'
-import prisma from '@/lib/db'
 import { Product } from '@prisma/client'
 
 type CartItem = {
