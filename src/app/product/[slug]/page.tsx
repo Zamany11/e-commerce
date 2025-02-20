@@ -9,7 +9,7 @@ export default async function ProductPage({
 }) {
   const { slug } = await params; // Await the Promise
   
-  const product = await prisma.product.findUnique({
+  const product = await prisma.product.findFirst({
     where: { slug }
   });
 
