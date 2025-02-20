@@ -5,9 +5,9 @@ import { AddToCart } from "@/components/AddToCart";
 export default async function ProductPage({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const { slug } = params;
+  const { slug } = await params; // Await the Promise
   
   const product = await prisma.product.findUnique({
     where: { slug }
