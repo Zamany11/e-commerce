@@ -9,6 +9,8 @@ type CartItem = {
 
 type CartStore = {
   items: CartItem[]
+  isSyncing: boolean;
+  syncCart: () => Promise<void>;
   addItem: (product: Product, quantity: number) => void
   removeItem: (productId: string) => void
   updateQuantity: (productId: string, quantity: number) => void
@@ -37,6 +39,18 @@ export const useCart = create<CartStore>((set) => ({
           ? { ...item, quantity: Math.max(1, newQuantity) } 
           : item
       )
-    }))
+    })),
+    isSyncing: false,
+  
+  syncCart: async () => {
+    try {
+      set({ isSyncing: true });
+      const response = await fetch('/api/cart');
+      const serverCart = await response.json();
+      set({ items: serverCart.items });
+    } finally {
+      set({ isSyncing: false });
+    }
+  }
   }));
   

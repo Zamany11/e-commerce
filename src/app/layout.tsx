@@ -34,18 +34,7 @@ export default function RootLayout({
       >
         <FlipWordsComponent />
         <Navbar />
-        <CartProvider
-          mode="payment"
-          cartMode="client-only"
-          stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!}
-          currency="NGN"
-          successUrl="/success"
-          cancelUrl="/cancel"
-          shouldPersist={true}
-        >
-          {children}
-        </CartProvider>
-      
+        {children}
         <Footer />
       </body>
     </html>
