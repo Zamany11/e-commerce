@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { FlipWordsComponent } from "@/components/FlipWords";
 import Footer from "@/components/Footer";
+import { CartProvider } from 'use-shopping-cart'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +34,18 @@ export default function RootLayout({
       >
         <FlipWordsComponent />
         <Navbar />
-        {children}
+        <CartProvider
+          mode="payment"
+          cartMode="client-only"
+          stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!}
+          currency="NGN"
+          successUrl="/success"
+          cancelUrl="/cancel"
+          shouldPersist={true}
+        >
+          {children}
+        </CartProvider>
+      
         <Footer />
       </body>
     </html>

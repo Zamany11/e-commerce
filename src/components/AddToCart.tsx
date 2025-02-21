@@ -48,3 +48,4 @@ export function AddToCart({ product }: { product: Product }) {
     </div>      
   )
 }
+
