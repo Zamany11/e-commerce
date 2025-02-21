@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useCart } from '@/hooks/use-cart' // Create custom hook
 import { Product } from '@prisma/client'
+import Link from 'next/link'
 
 export function AddToCart({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1)
@@ -36,12 +37,14 @@ export function AddToCart({ product }: { product: Product }) {
         </button>
       </div>
 
+<Link href="/cart">
       <button 
         onClick={() => addItem(product, quantity)}
         className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
       >
         Add to Cart ({quantity})
       </button>
-    </div>
+</Link>
+    </div>      
   )
 }
