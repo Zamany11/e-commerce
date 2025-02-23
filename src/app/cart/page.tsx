@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useCart } from '@/hooks/use-cart';
 import { CartItem } from '@/components/CartItem';
 
-const CartPage = () => {
+export default function CartPage() {
   const { items, syncCart, isSyncing } = useCart();
 
   // Sync cart on mount and periodically
@@ -17,7 +17,7 @@ const CartPage = () => {
   return (
     <section>
       <div className='container mx-auto p-4'>
-        <h1 className='text-5xl text-center py-6'>Your Cart</h1>
+        <h1 className='text-5xl text-center py-6 text-gray-800'>Your Cart</h1>
         
         {isSyncing && <div className="text-center p-2">Updating cart...</div>}
         
