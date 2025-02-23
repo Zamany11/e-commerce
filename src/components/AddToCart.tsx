@@ -1,7 +1,5 @@
 'use client' // Convert to client component
 import { useState } from 'react'
-import { useCart } from '@/hooks/use-cart' // Create custom hook
-import { Product } from '@prisma/client'
 import Link from 'next/link'
 import { CartContext } from '@/context/CartContext';
 import { useContext } from 'react';
