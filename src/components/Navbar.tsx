@@ -4,6 +4,7 @@ import { useState } from "react";
 import Search from "./Search";
 import Link from "next/link";
 import { useCart } from '@/hooks/use-cart'; 
+import AddToCart from "./AddToCart";
 
 
 const Navbar = () => {

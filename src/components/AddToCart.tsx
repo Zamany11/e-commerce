@@ -1,14 +1,29 @@
-'use client' // Convert to client component
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { CartContext } from '@/context/CartContext';
-import { useContext } from 'react';
+import { useCart } from '@/stores/cart-store'  // Changed import name
 
-export default function AddToCart({ productId }: { productId: string }) {
-  const { addItem } = useContext(CartContext);
+export default function AddToCart({ 
+  productId,
+  name,
+  price
+}: { 
+  productId: string
+  name: string
+  price: number
+}) {
   const [quantity, setQuantity] = useState(1)
-  
+  const addItem = useCart((state) => state.addItem)  // Updated hook name
 
+  const handleAddToCart = () => {
+    addItem({
+      id: productId,
+      name,
+      price
+    }, quantity)
+  }
+
+  
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
@@ -38,14 +53,14 @@ export default function AddToCart({ productId }: { productId: string }) {
         </button>
       </div>
 
-<Link href="/cart">
-      <button 
-        onClick={() => addItem(productId)}
-        className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
-      >
-        Add to Cart ({quantity})
-      </button>
-</Link>
+      <Link href="/cart">
+        <button 
+          onClick={() => addItem(productId, quantity)}
+          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
+        >
+          Add to Cart ({quantity})
+        </button>
+      </Link>
     </div>      
   )
 }
