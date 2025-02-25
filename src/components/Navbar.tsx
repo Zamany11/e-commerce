@@ -3,14 +3,13 @@ import { IconHome, IconUser, IconShoppingCart, IconSearch } from "@tabler/icons-
 import { useState } from "react";
 import Search from "./Search";
 import Link from "next/link";
-import { useCart } from '@/hooks/use-cart'; 
-import AddToCart from "./AddToCart";
+import { useCartStore } from "@/stores/cart-store";
 
 
 const Navbar = () => {
   
-  const { items } = useCart(); // Get cart items from store
-  const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0)
+  const { items } = useCartStore(); // Get cart items from store
+  const cartItemCount = items.reduce((sum, item) => (sum + (item.quantity || 0)), 0)
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   return (

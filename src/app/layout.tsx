@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { FlipWordsComponent } from "@/components/FlipWords";
 import Footer from "@/components/Footer";
-import { CartProvider } from "@/providers/cart-providers";
 
 
 const geistSans = Geist({
@@ -34,7 +33,7 @@ export default function RootLayout({
       >
         <FlipWordsComponent />
         <Navbar />
-        <CartProvider>{children}</CartProvider>
+        {children}
         <Footer />
       </body>
     </html>

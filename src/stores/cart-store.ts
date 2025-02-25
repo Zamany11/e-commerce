@@ -1,50 +1,42 @@
-// src/stores/cart-store.ts
 import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { persist } from 'zustand/middleware'
+import { CartState } from '@/types/CartState'
+import { AllProducts } from '@/components/AllProducts'
 
-type CartItem = {
-  id: string
-  name: string
-  price: number
-  quantity: number
-}
-
-type CartState = {
-  items: CartItem[]
-  total: number
-  addItem: (item: Omit<CartItem, 'quantity'>) => void
-  removeItem: (id: string) => void
-  clearCart: () => void
-}
-
-export const useCart = create<CartState>()(
+export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
       items: [],
       total: 0,
-      addItem: (item) => {
-        const existing = get().items.find(i => i.id === item.id)
-        set({
-          items: existing 
-            ? get().items.map(i => 
-                i.id === item.id ? {...i, quantity: i.quantity + 1} : i
-              )
-            : [...get().items, {...item, quantity: 1}],
-          total: get().total + item.price
-        })
-      },
-      removeItem: (id) => {
-        const item = get().items.find(i => i.id === id)
-        set({
-          items: get().items.filter(i => i.id !== id),
-          total: get().total - (item?.price || 0) * (item?.quantity || 0)
-        })
-      },
+      
+      addToCart: (product) => set((state) => {
+        if (!product?.id) return state;
+
+        const existingItem = state.items.find(item => item.id === product.id)
+        const newItems = existingItem 
+          ? state.items.map(item => 
+              item.id === product.id 
+                ? {...item, quantity: (item.quantity || 0) + 1}
+                : item
+            )
+          : [...state.items, {...product, quantity: 1}]
+          
+        return {
+          items: newItems,
+          total: newItems.reduce((sum, item) => sum + (item.price * (item.quantity || 0)), 0),
+        }
+      }),
+      
+      removeFromCart: (id) => set((state) => ({
+        items: state.items.filter(item => item.id !== id),
+        total: state.items.reduce((sum, item) => 
+          item.id === id ? sum : sum + (item.price * (item.quantity || 0)), 0)
+      })),
+      
       clearCart: () => set({ items: [], total: 0 })
     }),
     {
       name: 'cart-storage',
-      storage: createJSONStorage(() => localStorage)
     }
   )
 )

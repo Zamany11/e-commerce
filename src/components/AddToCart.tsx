@@ -1,27 +1,12 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { useCart } from '@/stores/cart-store'  // Changed import name
+import { useCartStore } from '@/stores/cart-store' 
+import { Product } from '@/types/product'
 
-export default function AddToCart({ 
-  productId,
-  name,
-  price
-}: { 
-  productId: string
-  name: string
-  price: number
-}) {
+export default function AddToCart({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1)
-  const addItem = useCart((state) => state.addItem)  // Updated hook name
-
-  const handleAddToCart = () => {
-    addItem({
-      id: productId,
-      name,
-      price
-    }, quantity)
-  }
+  const addToCart = useCartStore((state) => state.addToCart)  
 
   
   return (
@@ -55,7 +40,7 @@ export default function AddToCart({
 
       <Link href="/cart">
         <button 
-          onClick={() => addItem(productId, quantity)}
+          onClick={() => product?.id && addToCart(product)}
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
         >
           Add to Cart ({quantity})

@@ -1,16 +1,18 @@
 // components/cart.tsx
 'use client'
-import { useCart } from '@/stores/cart-store'
+import { useCartStore } from '@/stores/cart-store'
 
-export const Cart = () => {
-  const { items, total, addItem, removeItem } = useCart()
+export default function  Cart () {
+  const { items, total, removeFromCart } = useCartStore()
   
   return (
     <div>
-      {items.map(item => (
-        <div key={item.id}>
-          {item.name} - {item.quantity}
-          <button onClick={() => removeItem(item.id)}>Remove</button>
+      {items.map((item, index) => (
+        <div key={item?.id || `fallback-${index}`}>
+        {item?.title} - {item?.quantity || 0}
+        <button onClick={() => item?.id && removeFromCart(item.id)}>
+          Remove
+        </button>
         </div>
       ))}
       <p>Total: ${total}</p>

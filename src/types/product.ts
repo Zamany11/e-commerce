@@ -9,5 +9,6 @@ export interface Product {
     specs: string[];
     category: string;
     discount?: number;
+    quantity?: number;
   }
   
