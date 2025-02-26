@@ -1,9 +1,10 @@
 import { Product } from "./product";
 
+
 export interface CartState {
-    items: Product[]
+    items: Product[],
     total: number
-    addToCart: (item: Product) => void
+    addToCart: (item: Product, quantity: number) => void
     removeFromCart: (id: string) => void
     clearCart: () => void
   }

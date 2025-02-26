@@ -5,10 +5,11 @@ import { CartState } from '@/types/CartState'
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
+      
       items: [],
       total: 0,
       
-      addToCart: (product) => set((state) => {
+      addToCart: (product, quantity) => set((state) => {
         if (!product?.id) return state;
 
         const existingItem = state.items.find(item => item.id === product.id)

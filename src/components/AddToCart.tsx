@@ -1,12 +1,18 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link'
 import { useCartStore } from '@/stores/cart-store' 
 import { Product } from '@/types/product'
+import { useRouter } from 'next/navigation'
 
 export default function AddToCart({ product }: { product: Product }) {
+  const router = useRouter()
   const [quantity, setQuantity] = useState(1)
   const addToCart = useCartStore((state) => state.addToCart)  
+
+  const handleAddtoCart = ()  => { 
+      addToCart(product, quantity)
+      router.push('/cart')
+  }
 
   
   return (
@@ -38,14 +44,13 @@ export default function AddToCart({ product }: { product: Product }) {
         </button>
       </div>
 
-      <Link href="/cart">
+     
         <button 
-          onClick={() => product?.id && addToCart(product)}
+          onClick={handleAddtoCart}
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
         >
           Add to Cart ({quantity})
         </button>
-      </Link>
     </div>      
   )
 }

@@ -6,7 +6,7 @@ export default function  Cart () {
   const { items, total, removeFromCart } = useCartStore()
   
   return (
-    <div>
+    <div className='text-black'>
       {items.map((item, index) => (
         <div key={item?.id || `fallback-${index}`}>
         {item?.title} - {item?.quantity || 0}
