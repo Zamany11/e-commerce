@@ -2,6 +2,7 @@ import Image from "next/image";
 import prisma from '@/lib/db'
 import AddToCart from "@/components/AddToCart";
 
+
 export default async function ProductPage({
   params
 }: {
@@ -80,7 +81,7 @@ export default async function ProductPage({
             )}
             
           </div>
-          <AddToCart productId={product.id} />
+          <AddToCart product={product} />
           
         </div>
       </div>
