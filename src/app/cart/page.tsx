@@ -2,8 +2,11 @@
 import { useCartStore } from '@/stores/cart-store'
 import { IconTrash } from '@tabler/icons-react'
 import Link from 'next/link'
+import {useState, useEffect} from 'react'
+import Image from 'next/image'
 
 export default function Cart() {
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
   const { items, total, removeFromCart, updateQuantity } = useCartStore()
   const cartItemCount = items.reduce((sum, item) => (sum + (item.quantity || 0)), 0)
 
@@ -14,6 +17,21 @@ export default function Cart() {
         updateQuantity(itemId, quantity)
     }
   }
+
+  useEffect(() => {
+    const fetchRelated = async () => {
+      if (items.length > 0) {
+        const res = await fetch('/api/related-products', {
+          method: 'POST',
+          body: JSON.stringify({ cartItems: items })
+        })
+        const data = await res.json()
+        setRelatedProducts(data)
+      }
+    }
+    
+    fetchRelated()
+  }, [items])
   
   return (
     <div className='text-black p-4 md:p-6 container min-h-screen mx-auto'>
@@ -120,7 +138,7 @@ export default function Cart() {
             
             <div className='flex justify-between text-lg md:text-xl font-bold'>
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>${total.toLocaleString()}</span>
             </div>
           </div>
 
@@ -130,6 +148,36 @@ export default function Cart() {
             Proceed to Checkout
           </button>
         </div>
+        <div>
+        <h2 className="text-2xl font-bold mt-8">Related Products</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+          {relatedProducts.slice(0, 4).map(relatedProduct => (
+            <div key={relatedProduct.id} className="bg-white p-4 rounded shadow">
+              <div className="relative w-full aspect-square overflow-hidden">
+                <Image
+                  src={relatedProduct.images[0]}
+                  alt={relatedProduct.title}
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  priority
+                />
+              </div>
+              <h3 className="text-sm md:text-lg font-semibold mt-4">{relatedProduct.title}</h3>
+              <div className="flex justify-between md:flex-row flex-col mt-2">
+                <span className="text-red-600 font-bold">
+                  ₦{relatedProduct.price.toLocaleString()}
+                </span>
+                {relatedProduct.oldPrice && (
+                  <span className="text-gray-500 line-through text-sm hidden md:block">
+                    ₦{relatedProduct.oldPrice.toLocaleString()}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       </div>
       )}
     </div>
