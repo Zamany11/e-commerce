@@ -19,7 +19,10 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-lg font-bold">ZITECH</h1>
+              <Link href="/">
+                <h1 className="text-lg font-bold">ZITECH</h1>
+              </Link>
+              
             </div>
 
             {/* Desktop Search - Hidden on mobile */}
@@ -34,11 +37,6 @@ const Navbar = () => {
                   <button onClick={() => setIsSearchVisible(!isSearchVisible)} title="Search">
                     <IconSearch size={24} />
                   </button>
-                </li>
-                <li>
-                  <Link href="/" className="hover:text-gray-600" title="Home">
-                    <IconHome size={24} />
-                  </Link>
                 </li>
                 <li>
                 <Link href="/cart" className="hover:text-gray-600 relative" title="Cart">
@@ -64,15 +62,9 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <ul className="flex space-x-6">
                 <li>
-                  <Link href="/" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
-                    <IconHome size={20} />
-                    <span className="text-sm">Home</span>
-                  </Link>
-                </li>
-                <li>
                 <Link 
     href="/cart" 
-    className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors"
+    className="flex items-center gap-x-1.5 hover:text-gray-600  transition-colors"
   >
     <div className="relative">
       <IconShoppingCart size={20} stroke={1.5} />
@@ -86,7 +78,7 @@ const Navbar = () => {
   </Link>
                 </li>
                 <li>
-                  <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 hover:border-2 hover:border-orange-500 hover:rounded-lg hover:p-2 hover:bg-orange-400 transition-colors">
+                  <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 transition-colors">
                     <IconUser size={20} />
                     <span className="text-sm">SignIn / Register</span>
                   </Link>

@@ -7,4 +7,5 @@ export interface CartState {
     addToCart: (item: Product, quantity: number) => void
     removeFromCart: (id: string) => void
     clearCart: () => void
+    updateQuantity: (itemId: string, quantity: number) => void
   }

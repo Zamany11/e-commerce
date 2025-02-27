@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { FlipWordsComponent } from "@/components/FlipWords";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <FlipWordsComponent />
         <Navbar />
+        <Toaster />
         {children}
         <Footer />
       </body>
