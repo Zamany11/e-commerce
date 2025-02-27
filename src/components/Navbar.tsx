@@ -1,5 +1,5 @@
 "use client";
-import { IconHome, IconUser, IconShoppingCart, IconSearch } from "@tabler/icons-react";
+import { IconUser, IconShoppingCart, IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import Search from "./Search";
 import Link from "next/link";

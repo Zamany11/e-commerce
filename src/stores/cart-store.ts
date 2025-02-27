@@ -5,12 +5,12 @@ import toast  from 'react-hot-toast';
 
 export const useCartStore = create<CartState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       
       items: [],
       total: 0,
       
-      addToCart: (product, quantity) => set((state) => {
+      addToCart: (product) => set((state) => {
         if (!product?.id) return state;
 
         const existingItem = state.items.find(item => item.id === product.id)
