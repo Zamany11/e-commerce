@@ -18,7 +18,7 @@ const LogoMarquee = () => {
       <div className="logo-marquee-container md:rounded-sm">
       <Marquee speed={50} gradient={false} pauseOnHover={true}>
         {logos.map((logo, index) => (
-          <div key={index} className="logo-item">
+          <div key={index} className="mx-6 md:mx-12 logo-item">
             <Image src={logo.src} alt={logo.alt} width={60} height={60} />
           </div>
         ))}

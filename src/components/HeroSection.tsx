@@ -4,6 +4,7 @@ import { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import LogoMarquee from "./LogoMarquee";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -130,6 +131,9 @@ const HeroSection = () => {
     ))}
   </div>
 </div>
+</div>
+<div className="mt-2 md:mt-8">
+<LogoMarquee />
 </div>
 </div>
 
