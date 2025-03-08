@@ -1,7 +1,7 @@
 .logo-marquee-container {
-  background-color: rgb(249 115 22);
+  background-color: white;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .logo-item {
-  margin: 0 20px; /* Spacing between logos */
+  margin: 0 3rem; /* Spacing between logos */
 }
 
 .logo-item img {

@@ -14,13 +14,12 @@ const logos = [
 
 const LogoMarquee = () => {
   return (
-    <section className=" md:rounded-md hidden md:block">
+    <section className="container mx-auto rounded-md">
       <div className="logo-marquee-container md:rounded-sm">
-      <h2 className="title py-2 mb-4 font-bold text-orange-100">Trusted By Our Top Brands</h2>
       <Marquee speed={50} gradient={false} pauseOnHover={true}>
         {logos.map((logo, index) => (
           <div key={index} className="logo-item">
-            <Image src={logo.src} alt={logo.alt} width={100} height={100} />
+            <Image src={logo.src} alt={logo.alt} width={60} height={60} />
           </div>
         ))}
       </Marquee>

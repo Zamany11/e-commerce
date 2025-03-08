@@ -8,10 +8,10 @@ export default function Home() {
     <div className="bg-slate-100">  
       <Nav2 />
       <HeroSection />
-      <HomePage />
       <div className="mt-8">
         <LogoMarquee /> 
       </div>
+      <HomePage />
     </div>
   );
 }
