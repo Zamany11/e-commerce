@@ -91,7 +91,7 @@ export default async function ProductPage({
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
           {relatedProducts.slice(0, 4).map(relatedProduct => (
-            <Link key={relatedProduct.id} href={`product/${relatedProduct.slug}`}>
+            <Link key={relatedProduct.id} href={`/product/${relatedProduct.slug}`}>
             <div  className="bg-white p-4 rounded shadow">
               <div className="relative w-full aspect-square overflow-hidden">
                 <Image
