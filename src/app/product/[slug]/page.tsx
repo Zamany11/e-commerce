@@ -1,6 +1,7 @@
 import Image from "next/image";
 import prisma from '@/lib/db'
 import AddToCart from "@/components/AddToCart";
+import Link from "next/link";
 
 
 export default async function ProductPage({
@@ -17,7 +18,7 @@ export default async function ProductPage({
   if (!product) {
     return (
       <div className="container mx-auto p-4">
-        <p className="text-center text-xl">Product not found!</p>
+        <p className="text-center text-xl text-black">Product not found!</p>
       </div>
     );
   }
@@ -87,9 +88,11 @@ export default async function ProductPage({
       </div>
       <div>
         <h2 className="text-2xl font-bold mt-8">Related Products</h2>
+        
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
           {relatedProducts.slice(0, 4).map(relatedProduct => (
-            <div key={relatedProduct.id} className="bg-white p-4 rounded shadow">
+            <Link key={relatedProduct.id} href={`product/${relatedProduct.slug}`}>
+            <div  className="bg-white p-4 rounded shadow">
               <div className="relative w-full aspect-square overflow-hidden">
                 <Image
                   src={relatedProduct.images[0]}
@@ -112,8 +115,9 @@ export default async function ProductPage({
                 )}
               </div>
             </div>
+            </Link>
           ))}
-        </div>
+          </div>
       </div>
     </div>
   );
