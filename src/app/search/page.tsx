@@ -1,13 +1,13 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
+// Define the correct page component type with proper types
+type Props = {
+  params: Record<string, never>; // Use Record<string, never> instead of {}
+  searchParams: Record<string, string | string[] | undefined>;
+};
 
-export default async function SearchResults({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-
+export default async function SearchResults({ searchParams }: Props) {
   const queryParam = searchParams.query;
   const query = typeof queryParam === 'string' ? queryParam : 
                 Array.isArray(queryParam) ? queryParam[0] : "";
@@ -27,9 +27,9 @@ export default async function SearchResults({
   const formattedProducts = products.map(product => ({
     title: product.title,
     price: product.price,
-    oldPrice: product.oldPrice || product.price, // Fallback if oldPrice is null
-    discount: product.discount || 0, // Fallback if discount is null
-    imageUrl: product.images[0] || "/placeholder.jpg", // Use first image or placeholder
+    oldPrice: product.oldPrice || product.price,
+    discount: product.discount || 0,
+    imageUrl: product.images[0] || "/placeholder.jpg",
     category: product.category,
     slug: product.slug
   }));
