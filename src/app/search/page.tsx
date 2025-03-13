@@ -2,7 +2,6 @@ import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
 interface SearchPageProps {
-  params: {};
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
