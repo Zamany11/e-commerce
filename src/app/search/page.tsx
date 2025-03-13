@@ -1,12 +1,11 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
-// Define the props type correctly for Next.js pages
 interface SearchPageProps {
-  params: object;
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
+  searchParams: {
+    query: string | string[];
+  };
+} 
 export default async function SearchResults({ searchParams }: SearchPageProps) {
   // Handle both string and array cases for the query parameter
   const queryParam = searchParams.query;
