@@ -4,8 +4,6 @@ import NewsLetter from "./NewsLetter";
 
 export default function Footer() {
 
-   
-
     return(
         <section className="bg-gray-800 text-white py-3">
             <div className="px-8 md:px-20 py-5 flex flex-col md:flex-row justify-between">

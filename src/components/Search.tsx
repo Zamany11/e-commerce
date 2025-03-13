@@ -1,14 +1,19 @@
 "use client";
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Search = () => {
   const [query, setQuery] = useState("");
+  const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your search logic here
-    console.log("Search query:", query);
+    
+    if (query.trim()) {
+      // Navigate to search results page with the query
+      router.push(`/search?query=${encodeURIComponent(query.trim())}`);
+    }
   };
 
   return (
