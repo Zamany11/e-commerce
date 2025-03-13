@@ -3,12 +3,17 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
-export default async function SearchResults({
-  searchParams,
-}: {
-  searchParams: { query: string };
-}) {
-  const query = searchParams.query;
+
+type SearchParams = {
+  query?: string;
+};
+
+type Props = {
+  searchParams: SearchParams;
+};
+
+export default async function SearchResults({ searchParams }: Props) {
+  const query = searchParams.query || "";
   
   if (!query) {
     return (
