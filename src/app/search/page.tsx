@@ -1,14 +1,14 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
-// Use the correct type for Next.js App Router pages
+// Remove the type definition and use a simpler approach
 export default async function SearchResults({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: Record<string, string | string[] | undefined>;
 }) {
   
-  const queryParam = searchParams?.query;
+  const queryParam = searchParams.query;
   const query = typeof queryParam === 'string' ? queryParam : 
                 Array.isArray(queryParam) ? queryParam[0] : "";
   
