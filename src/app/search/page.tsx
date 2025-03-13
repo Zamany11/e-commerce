@@ -3,7 +3,7 @@ import ProductCard from "@/components/ProductCards";
 
 // Define the props type correctly for Next.js pages
 interface SearchPageProps {
-  params: {};
+  params: object;
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
