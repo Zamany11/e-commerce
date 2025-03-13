@@ -1,13 +1,13 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
-interface SearchPageProps {
-  searchParams: {
-    query: string | string[];
-  };
-} 
-export default async function SearchResults({ searchParams }: SearchPageProps) {
-  // Handle both string and array cases for the query parameter
+
+export default async function SearchResults({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+
   const queryParam = searchParams.query;
   const query = typeof queryParam === 'string' ? queryParam : 
                 Array.isArray(queryParam) ? queryParam[0] : "";
