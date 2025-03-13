@@ -35,16 +35,16 @@ export default async function SearchResults({
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-3xl text-center text-gray-700 font-bold mb-4">
-        Search Results for "{query}"
+        Search Results for &quot;{query}&quot;
       </h2>
       
       {products.length === 0 ? (
-        <p className="text-center text-gray-700 text-md">Sorry, No products found matching "{query}"</p>
+        <p className="text-center text-gray-700 text-md">Sorry, No products found matching &quot;{query}&quot;</p>
       ) : (
         <div>
           <ProductCard 
             productcards={formattedProducts} 
-            title= {query}
+            title={query}
           />
         </div>
       )}
