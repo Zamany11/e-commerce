@@ -1,17 +1,16 @@
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
+interface SearchPageProps {
+  params: {};
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
-type SearchParams = {
-  query?: string;
-};
-
-type Props = {
-  searchParams: SearchParams;
-};
-
-export default async function SearchResults({ searchParams }: Props) {
-  const query = searchParams.query || "";
+export default async function SearchResults({ searchParams }: SearchPageProps) {
+  
+  const queryParam = searchParams.query;
+  const query = typeof queryParam === 'string' ? queryParam : 
+                Array.isArray(queryParam) ? queryParam[0] : "";
   
   if (!query) {
     return (
