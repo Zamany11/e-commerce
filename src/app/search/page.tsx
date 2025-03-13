@@ -1,5 +1,3 @@
-
-
 import { searchProducts } from "@/app/actions/search";
 import ProductCard from "@/components/ProductCards";
 
