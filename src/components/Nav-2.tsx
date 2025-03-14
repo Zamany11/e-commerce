@@ -1,23 +1,27 @@
 import Link from "next/link";
+import { FaBox, FaStore, FaPhoneAlt } from "react-icons/fa";
 
 export default function Nav2() {
     return(
         <section className="text-gray-900">
-              <div className="container mx-auto flex items-center justify-around py-6">
-                <ul className="flex space-x-6">
+              <div className="container mx-auto flex items-center justify-around py-3">
+                <ul className="flex space-x-6 font-sans font-medium">
                     <li>
-                       <Link href="/">
-                       <span>About Us</span>
+                       <Link href="/" className="flex items-center gap-1 hover:text-blue-600 text-blue-400 transition-colors">
+                         <FaBox className="text-sm" />
+                         <span>Track Orders</span>
                        </Link> 
                     </li>
                     <li>
-                    <Link href="/">
-                      <span>Sell on Zitech</span>
+                    <Link href="/" className="flex items-center gap-1 hover:text-blue-600 text-blue-400 transition-colors">
+                      <FaStore className="text-sm" />
+                      <span>Sell</span>
                     </Link>
                     </li>
                     <li>
-                      <Link href="/">
-                      <span>Affiliate</span>
+                      <Link href="/" className="flex items-center gap-1 hover:text-blue-600 text-blue-400 transition-colors">
+                      <FaPhoneAlt className="text-sm" />
+                      <span>Call to Order</span>
                    </Link>
                     </li> 
                 </ul>

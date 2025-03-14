@@ -14,6 +14,8 @@ const Search = () => {
       // Navigate to search results page with the query
       router.push(`/search?query=${encodeURIComponent(query.trim())}`);
     }
+
+    setQuery("");
   };
 
   return (
