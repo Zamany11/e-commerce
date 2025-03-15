@@ -13,12 +13,12 @@ export default function Footer() {
                     </div>
                     
                     <div>
-                        <span>Have Questions? Call Us!</span>
+                        <span className="font-sans">Have Questions? Call Us!</span>
                     </div>
-                    <div>
+                    <div className="font-sans">
                         08026057491, 07045960587
                     </div>
-                    <div>
+                    <div className="font-sans">
                         Whatsapp: 07065477228
                     </div>
                 </div>
@@ -29,19 +29,12 @@ export default function Footer() {
                         <span className="font-bold">Ouick Links</span> 
                     </div>
                     
-                    <div className="">
-                        <ul >
-                            <li>About Us</li>
-                            <li>Sell on Zitech</li>
-                            <li>Become an affiliate</li>
-                            <li>Smartphones</li>
-                            <li>Latest Iphones</li>
-                            <li>Samsung Phones</li>
-                            <li>Infinix Phones</li>
-                            <li>Techno Phones</li>
-                            <li>Itel Phones</li>
-                            <li>Redmi Phones</li>
-                            <li>Mobile Accessories</li>
+                    <div className="font-sans">
+                        <ul>
+                            <li className="hover:underline">About Us</li>
+                            <li className="hover:underline">Sell on Zitech</li>
+                            <li className="hover:underline">Smartphones</li>
+                            <li className="hover:underline">Mobile Accessories</li>
                         </ul>
                     </div>
                     </div>

@@ -7,7 +7,7 @@ export default function NewsLetter() {
   return(
     <div>
         <span className="font-bold">New To Zitech?</span>
-        <p>Subscribe to our Newsletter to get updates on best offers!</p>
+        <p className="font-sans">Subscribe to our Newsletter to get updates on best offers!</p>
           <form className="max-w-md flex-1 mt-3">
             <div className="relative group">
               <input
