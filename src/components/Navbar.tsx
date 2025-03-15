@@ -40,15 +40,15 @@ const Navbar = () => {
                 </li>
                 <li>
                 <Link href="/cart" className="hover:text-gray-600 relative" title="Cart">
-    <div className="relative">
-      <IconShoppingCart size={24} />
-      {cartItemCount > 0 && (
-        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
-          {cartItemCount}
-        </span>
-      )}
-    </div>
-  </Link>
+                    <div className="relative">
+                      <IconShoppingCart size={24} />
+                      {cartItemCount > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
+                          {cartItemCount}
+                        </span>
+                      )}
+                    </div>
+                </Link>
                 </li>
                 <li>
                   <Link href="/signin" className="hover:text-gray-600" title="Sign In">
@@ -63,24 +63,24 @@ const Navbar = () => {
               <ul className="flex space-x-6">
                 <li>
                 <Link 
-    href="/cart" 
-    className="flex items-center gap-x-1.5 hover:text-gray-600  transition-colors"
-  >
-    <div className="relative">
-      <IconShoppingCart size={20} stroke={1.5} />
-      {cartItemCount > 0 && (
-        <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
-          {cartItemCount}
-        </span>
-      )}
-    </div>
-    <span className="text-sm">Cart</span>
-  </Link>
+                      href="/cart" 
+                      className="flex items-center gap-x-1.5 hover:text-gray-600  transition-colors"
+                    >
+                      <div className="relative">
+                        <IconShoppingCart size={20} stroke={1.5} />
+                        {cartItemCount > 0 && (
+                          <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">
+                            {cartItemCount}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-sm font-sans font-medium">Cart</span>
+                 </Link>
                 </li>
                 <li>
-                  <Link href="/signin" className="flex items-center gap-x-1.5 hover:text-gray-600 transition-colors">
+                  <Link href="/signin" className="flex items-center gap-x-1 hover:text-gray-600 transition-colors">
                     <IconUser size={20} />
-                    <span className="text-sm">SignIn / Register</span>
+                    <span className="text-sm font-sans font-medium">Account</span>
                   </Link>
                 </li>
               </ul>

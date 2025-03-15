@@ -81,7 +81,7 @@ const HeroSection = () => {
                       }`}>
                         <h1 className="text-xl md:text-3xl font-bold text-gray-900">
                           <div>{slide.title}</div>
-                          <div className="text-sm md:text-lg text-blue-400">{slide.description}</div>
+                          <div className="text-sm md:text-lg text-orange-400">{slide.description}</div>
                         </h1>
                         <button className="bg-orange-500 hover:bg-orange-600 font-bold text-white px-10 py-1 rounded-lg">
                           Shop
@@ -123,7 +123,7 @@ const HeroSection = () => {
           <h3 className="font-semibold text-gray-800 text-sm mb-1">
             {card.title}
           </h3>
-          <p className="text-blue-500 text-xs">
+          <p className="text-orange-500 text-sm font-sans">
             {card.description}
           </p>
         </div>
