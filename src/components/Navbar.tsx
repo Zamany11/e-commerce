@@ -78,7 +78,7 @@ const Navbar = () => {
                  </Link>
                 </li>
                 <li>
-                  <Link href="/signin" className="flex items-center gap-x-1 hover:text-gray-600 transition-colors">
+                  <Link href="/account" className="flex items-center gap-x-1 hover:text-gray-600 transition-colors">
                     <IconUser size={20} />
                     <span className="text-sm font-sans font-medium">Account</span>
                   </Link>
