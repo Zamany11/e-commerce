@@ -1,9 +1,6 @@
 export default function HomeLoading() {
     return (
       <div className="container mx-auto p-4">
-        <h2 className="text-3xl text-center text-gray-700 font-bold mb-4">
-          Searching...
-        </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {[...Array(8)].map((_, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-4 animate-pulse">
