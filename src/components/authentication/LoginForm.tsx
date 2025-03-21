@@ -1,14 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { FaGoogle, FaEnvelope, FaLock } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [user, setUser] = useState(null);
   const router = useRouter();
+
+  // Add real-time auth state listener
+  useEffect(() => {
+    const unsubscribe = authClient.onAuthStateChange((currentUser) => {
+      setUser(currentUser);
+      if (currentUser) {
+        router.push('/');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [router]);
 
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,9 +31,11 @@ export default function LoginForm() {
     
     try {
       await authClient.signInWithEmailAndPassword(email, password);
-      router.push('/'); // Redirect after successful login
+      toast.success('Successfully signed in!');
+      // No need to redirect here as the useEffect will handle it
     } catch (err) {
       setError('Invalid email or password');
+      toast.error('Failed to sign in');
       console.error(err);
     } finally {
       setLoading(false);
@@ -32,14 +48,25 @@ export default function LoginForm() {
     
     try {
       await authClient.signInWithGoogle();
-      router.push('/'); // Redirect after successful login
+      toast.success('Successfully signed in with Google!');
+      // No need to redirect here as the useEffect will handle it
     } catch (err) {
       setError('Failed to sign in with Google');
+      toast.error('Failed to sign in with Google');
       console.error(err);
     } finally {
       setLoading(false);
     }
   };
+
+  // If user is already logged in, don't show the form
+  if (user) {
+    return (
+      <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+        <p className="text-center">You are already signed in. Redirecting...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
