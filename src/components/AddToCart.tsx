@@ -80,7 +80,7 @@ export default function AddToCart({ product }: { product: Product }) {
 
      
         <button 
-          onClick={handleAddtoCart}
+          onClick={handleAddtoCart}    
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded transition-colors"
         >
           {existingItem ? 'Update Cart' : 'Add to Cart'} ({(existingItem?.quantity || localQuantity)})

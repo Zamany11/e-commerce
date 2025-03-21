@@ -9,7 +9,7 @@ export default async function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);  
   const [error, setError] = useState('');
   const router = useRouter();
 
