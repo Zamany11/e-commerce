@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { authClient } from '@/lib/auth-client';
+import { authClient, signIn } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { FaGoogle, FaEnvelope, FaLock, FaUser, FaPhoneAlt } from 'react-icons/fa';
 
-export default async function LoginForm() {
+export default function RegisterForm() {
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
@@ -13,21 +13,17 @@ export default async function LoginForm() {
   const [error, setError] = useState('');
   const router = useRouter();
 
-
-  const { data, error } = await authClient.signUp.email({
-    email, 
-    password, 
-    name, 
-    callbackURL: "/" 
-});
-
-  const handleEmailLogin = async (e: React.FormEvent) => {
+  const handleEmailSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     
     try {
-      await authClient.signInWithEmailAndPassword(email, password);
+      await authClient.signUp.email({
+         email: "test@example.com",
+         password: "password1234",
+         name: "test",
+      });
       router.push('/'); // Redirect after successful login
     } catch (err) {
       setError('Invalid email or password');
@@ -37,14 +33,17 @@ export default async function LoginForm() {
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleSignUp = async () => {
     setLoading(true);
     setError('');
     
     try {
-      await authClient.signInWithGoogle();
-      router.push('/'); // Redirect after successful login
-    } catch (err) {
+      await authClient.signIn.social({
+        provider: "google"
+    });
+    console.log("success");
+      // router.push('/'); // Redirect after successful login
+}     catch (err) {
       setError('Failed to sign in with Google');
       console.error(err);
     } finally {
@@ -62,7 +61,7 @@ export default async function LoginForm() {
         </div>
       )}
       
-      <form onSubmit={handleEmailLogin} className="space-y-4">
+      <form onSubmit={handleEmailSignUp} className="space-y-4">
       <div>
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
           Full Name
@@ -175,7 +174,7 @@ export default async function LoginForm() {
       </div>
       
       <button
-        onClick={handleGoogleLogin}
+        onClick={handleGoogleSignUp}
         disabled={loading}
         className="w-full mt-4 bg-white border border-gray-300 text-gray-700 font-bold py-2 px-4 rounded flex items-center justify-center gap-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
       >

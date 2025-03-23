@@ -12,27 +12,16 @@ export default function LoginForm() {
   const [user, setUser] = useState(null);
   const router = useRouter();
 
-  // Add real-time auth state listener
-  useEffect(() => {
-    const unsubscribe = authClient.onAuthStateChange((currentUser) => {
-      setUser(currentUser);
-      if (currentUser) {
-        router.push('/');
-      }
-    });
-
-    return () => unsubscribe();
-  }, [router]);
-
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     
     try {
-      await authClient.signInWithEmailAndPassword(email, password);
-      toast.success('Successfully signed in!');
-      // No need to redirect here as the useEffect will handle it
+      await authClient.signIn.email({
+        email: "test@example.com",
+        password: "password1234",
+     });
     } catch (err) {
       setError('Invalid email or password');
       toast.error('Failed to sign in');
@@ -47,9 +36,10 @@ export default function LoginForm() {
     setError('');
     
     try {
-      await authClient.signInWithGoogle();
-      toast.success('Successfully signed in with Google!');
-      // No need to redirect here as the useEffect will handle it
+      await authClient.signIn.social({
+        provider: "google"
+    });
+    console.log("success");
     } catch (err) {
       setError('Failed to sign in with Google');
       toast.error('Failed to sign in with Google');
